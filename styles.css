@@ -1,0 +1,91 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --answerColor-neutral: 171;
+  --answerColor-wrong: 5;
+  --answerColor-correct: 140;
+}
+
+body {
+  --answerColor: var(--answerColor-neutral);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(var(--answerColor), 100%, 50%);
+  display: grid;
+}
+
+.title{
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+body.correct {
+  --answerColor: var(--answerColor-correct);
+}
+
+body.wrong {
+  --answerColor: var(--answerColor-wrong);
+}
+
+.container {
+  width: 800px;
+  max-width: 80%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
+}
+
+.buttonGrid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.button {
+  --answerColor: var(--answerColor-neutral);
+  border: 1px solid hsl(var(--answerColor), 80%, 30%);
+  background-color: hsl(var(--answerColor), 100%, 40%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  outline: none;
+}
+
+.button:hover {
+  border-color: black;
+}
+
+.button.correct {
+  --answerColor: var(--answerColor-correct);
+  color: black;
+}
+
+.button.wrong {
+  --answerColor: var(--answerColor-wrong);
+}
+
+.startButton, .nextButton {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
